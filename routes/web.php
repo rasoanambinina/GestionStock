@@ -21,6 +21,14 @@ Route::get('/', function () {
 
 Route::resource('products', 'ProductController');
 
+Route::resource('fournisseurs', 'FournisseurController');
+
+Route::resource('personnels', 'PersonnelController');
+
+Route::resource('materiels', 'MaterielController');
+
+Route::resource('directions','DirectionController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
