@@ -6,7 +6,7 @@
                 <h2> Visualiser Fournisseur</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('fournisseurs') }}"> Back</a>
+                <a class="btn info" href="{{ route('fournisseurs') }}"> Back</a>
             </div>
         </div>
     </div>

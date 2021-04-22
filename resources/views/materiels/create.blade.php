@@ -7,7 +7,7 @@
             <h2>Ajouter materiel</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('materiels') }}"> Back</a>
+            <a class="btn info" href="{{ route('materiels') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -23,7 +23,7 @@
     </div>
 @endif
 
-<form action="{{ route("materiels.store") }}" method="POST">
+<form action="{{ route('materiels.store') }}" method="POST">
     @csrf
 
      <div class="row">
@@ -42,7 +42,7 @@
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn warning">Submit</button>
         </div>
     </div>
 

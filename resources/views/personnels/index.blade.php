@@ -22,7 +22,7 @@
 
     </div>
             <br/>
-    <table class="table table-striped">
+    <table class="">
         <tr>
             <th>No</th>
             <th>Reference</th>
@@ -32,7 +32,7 @@
             <th>Téléphone</th>
             <th>Adresse</th>
             <th>Fonction</th>
-            <th width="280px">Action</th>
+            <th >Action</th>
         </tr>
         @php $i =1; @endphp
         @foreach ($personnels as $personnel)
@@ -48,14 +48,14 @@
             <td>
                 <form action="{{ route('personnels.destroy',$personnel->id) }}" method="POST">
 
-                    <a class="btn btn-info" href="{{ route('personnels.show',$personnel->id) }}">Show</a>
+                    <a class="btn success" href="{{ route('personnels.show',$personnel->id) }}">Show</a>
 
-                    <a class="btn btn-primary" href="{{ route('personnels.edit',$personnel->id) }}">Edit</a>
+                    <a class="btn default" href="{{ route('personnels.edit',$personnel->id) }}">Edit</a>
 
                     @csrf
                     @method('DELETE')
 
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn danger">Delete</button>
                 </form>
             </td>
         </tr>

@@ -13,7 +13,7 @@
                 <div class="col-lg-12 margin-tb">
                     <div class="pull-left">
                         <h2>Laravel 7 CRUD </h2>
-                        <a class="btn btn-success" href="{{ route('materiels.create') }}"> Ajouter un materiel</a>
+                        <a class="btn info" href="{{ route('materiels.create') }}"> Ajouter un materiel</a>
                     </div>
                     <div class="pull-right">
 
@@ -29,7 +29,7 @@
             <th>No</th>
             <th>Reference</th>
             <th>Nom</th>
-            <th width="280px">Action</th>
+            <th >Action</th>
         </tr>
         @php $i =1; @endphp
         @foreach ($materiels as $materiel)
@@ -40,14 +40,14 @@
             <td>
                 <form action="{{ route('materiels.destroy',$materiel->id) }}" method="POST">
 
-                    <a class="btn btn-info" href="{{ route('materiels.show',$materiel->id) }}">Show</a>
+                    <a class="btn success" href="{{ route('materiels.show',$materiel->id) }}">Show</a>
 
-                    <a class="btn btn-primary" href="{{ route('materiels.edit',$materiel->id) }}">Edit</a>
+                    <a class="btn default" href="{{ route('materiels.edit',$materiel->id) }}">Edit</a>
 
                     @csrf
                     @method('DELETE')
 
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn danger">Delete</button>
                 </form>
             </td>
         </tr>

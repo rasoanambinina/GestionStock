@@ -7,7 +7,7 @@
             <h2>Ajouter Personnel</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('personnels') }}"> Back</a>
+            <a class="btn info" href="{{ route('personnels') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -77,7 +77,7 @@
              </div>
          </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn warning">Submit</button>
         </div>
     </div>
 
