@@ -6,7 +6,7 @@
                 <h2> Visualiser direction</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('directions.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('directions') }}"> Back</a>
             </div>
         </div>
     </div>

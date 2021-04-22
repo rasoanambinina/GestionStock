@@ -31,6 +31,14 @@ Route::resource('directions','DirectionController');
 
 Auth::routes();
 
+Route::get('/personnels', 'PersonnelController@index')->name('personnels');
+
+Route::get('/directions', 'DirectionController@index')->name('directions');
+
+Route::get('/fournisseurs', 'FournisseurController@index')->name('fournisseurs');
+
+Route::get('/materiels', 'MaterielController@index')->name('materiels');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('ajaxRequest', 'AjaxController@ajaxRequest');

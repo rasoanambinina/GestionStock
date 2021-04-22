@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Laravel 7 CRUD Application - ItSolutionStuff.com</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
+    <title>CSS Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style1.css">
 </head>
 <body>
-  
-<div class="container">
+
+<div class="topnav">
+    <a href="">Accueil</a>
+    <a href="{{route('fournisseurs')}}">Fournisseur</a>
+    <a href="{{route('personnels')}}">Personnel</a>
+    <a href="{{route('materiels')}}">Materiels</a>
+    <a href="{{route('directions')}}">Direction</a>
+</div>
+
+<div class="content">
+
     @yield('content')
 </div>
-   
+
+<div class="footer">
+    <p>Footer</p>
+</div>
+
 </body>
 </html>

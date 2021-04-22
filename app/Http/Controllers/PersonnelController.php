@@ -50,7 +50,7 @@ class PersonnelController extends Controller
 
         Personnel::create($request->all());
 
-        return redirect()->route('personnels.index')
+        return redirect()->route('personnels')
             ->with('succes', 'personnel crée avec succès.');
     }
 
@@ -95,9 +95,9 @@ class PersonnelController extends Controller
             'fonction' => 'required',
 
         ]);
-        Personnels::update($request->all());
+        $personnel->update($request->all());
 
-        return redirect()->route('personnels.index')
+        return redirect()->route('personnels')
             ->with('succes', 'personnel modifié avec succès.');
     }
 
@@ -111,7 +111,7 @@ class PersonnelController extends Controller
     {
         $personnel->delete();
 
-        return redirect()->route('personnels.index')
+        return redirect()->route('personnels')
             ->with('success', 'personnel supprimé avec succès.');
     }
 }

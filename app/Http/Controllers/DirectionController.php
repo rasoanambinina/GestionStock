@@ -46,7 +46,7 @@ class DirectionController extends Controller
 
         Direction::create($request->all());
 
-        return redirect()->route('directions.index')
+        return redirect()->route('directions')
             ->with('success', 'direction crée avec succès.');
     }
 
@@ -88,7 +88,7 @@ class DirectionController extends Controller
 
         $direction->update($request->all());
 
-        return redirect()->route('directions.index')
+        return redirect()->route('directions')
             ->with('success', 'direction modifié avec succès.');
     }
 
@@ -102,7 +102,7 @@ class DirectionController extends Controller
     {
         $direction->delete();
 
-        return redirect()->route('directions.index')
+        return redirect()->route('directions')
             ->with('success','Direction supprimé avec succès.');
     }
 }

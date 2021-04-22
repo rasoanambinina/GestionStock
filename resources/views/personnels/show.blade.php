@@ -6,7 +6,7 @@
                 <h2> Visualiser Personnel</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('personnels.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('personnels') }}"> Back</a>
             </div>
         </div>
     </div>

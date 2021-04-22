@@ -46,7 +46,7 @@ class MaterielController extends Controller
 
         Materiel::create($request->all());
 
-        return redirect()->route('materiels.index')
+        return redirect()->route('materiels')
             ->with('success', 'materiel crée avec succès.');
     }
 
@@ -88,7 +88,7 @@ class MaterielController extends Controller
 
         $materiel->update($request->all());
 
-        return redirect()->route('materiels.index')
+        return redirect()->route('materiels')
             ->with('success', 'Materiel modifié avec succès.');
     }
 
@@ -102,7 +102,7 @@ class MaterielController extends Controller
     {
         $materiel->delete();
 
-        return redirect()->route('materiels.index')
+        return redirect()->route('materiels')
             ->with('success', 'Materiel supprimé avec succès.');
     }
 }

@@ -7,7 +7,7 @@
             <h2>Add New Fournisseur</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('fournisseurs.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('fournisseurs') }}"> Back</a>
         </div>
     </div>
 </div>
