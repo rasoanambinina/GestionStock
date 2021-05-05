@@ -9,6 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class Materiel extends Model
 {
     protected $fillable = [
-        'referenceMateriel','nom'
+        'referenceMateriel','nom','prixUnitaire','stock'
     ];
 }

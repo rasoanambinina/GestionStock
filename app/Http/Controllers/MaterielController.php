@@ -42,6 +42,8 @@ class MaterielController extends Controller
         $request->validate([
             'referenceMateriel' => 'required',
             'nom' => 'required',
+            'prixUnitaire' => 'required',
+            'stock' => 'required',
         ]);
 
         Materiel::create($request->all());

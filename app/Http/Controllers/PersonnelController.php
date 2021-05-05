@@ -51,7 +51,7 @@ class PersonnelController extends Controller
         Personnel::create($request->all());
 
         return redirect()->route('personnels')
-            ->with('succes', 'personnel crée avec succès.');
+            ->with('success', 'personnel crée avec succès.');
     }
 
     /**
@@ -98,7 +98,7 @@ class PersonnelController extends Controller
         $personnel->update($request->all());
 
         return redirect()->route('personnels')
-            ->with('succes', 'personnel modifié avec succès.');
+            ->with('success', 'personnel modifié avec succès.');
     }
 
     /**

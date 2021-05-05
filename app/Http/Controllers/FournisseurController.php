@@ -46,7 +46,7 @@ class FournisseurController extends Controller
         Fournisseur::create($request->all());
 
         return redirect()->route('fournisseurs')
-            ->with('succes','fournisseur crée avec succès.');
+            ->with('success','fournisseur crée avec succès.');
     }
 
     /**
@@ -89,7 +89,7 @@ class FournisseurController extends Controller
         $fournisseur->update($request->all());
 
         return redirect()->route('fournisseurs')
-            ->with('succes', 'Fournisseur modifié avec succès.');
+            ->with('success', 'Fournisseur modifié avec succès.');
     }
 
     /**
@@ -103,6 +103,6 @@ class FournisseurController extends Controller
         $fournisseur->delete();
 
         return redirect()->route('fournisseurs')
-            ->with('succes', 'fournisseur supprimé avec succès.');
+            ->with('success', 'fournisseur supprimé avec succès.');
     }
 }

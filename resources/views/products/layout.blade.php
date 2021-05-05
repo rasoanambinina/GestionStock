@@ -14,6 +14,9 @@
     <a href="{{route('personnels')}}">Personnel</a>
     <a href="{{route('materiels')}}">Materiels</a>
     <a href="{{route('directions')}}">Direction</a>
+    <a href="{{route('bonEntrers')}}">Bon Entrée</a>
+    <a href="{{route('bonSorties')}}">Bon Sorties</a>
+    <a href="{{route('demandes')}}">Demande</a>
 </div>
 
 <div class="content">

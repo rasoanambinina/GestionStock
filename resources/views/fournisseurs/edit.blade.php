@@ -27,7 +27,26 @@
         @csrf
         @method('PUT')
 
-         <div class="row">
+        <h3>Modification Fournisseur</h3>
+
+    <!--    <div class="container">
+            <form action="/action_page.php">
+                <label for="fname">Reference</label>
+                <input type="text" id="fname" name="firstname" placeholder="reference">
+
+                <label for="lname">Nom</label>
+                <input type="text" id="lname" name="lastname" placeholder="nom">
+
+                <label for="lname">Adresse</label>
+                <input type="text" id="lname" name="lastname" placeholder="adresse">
+
+
+                <input type="submit" value="Enregistrer">
+            </form>
+        </div> -->
+
+
+        <div class="row">
                  <div class="col-xs-12 col-sm-12 col-md-12">
                      <div class="form-group">
                          <strong>Reference:</strong>
@@ -49,8 +68,15 @@
                      </div>
                  </div>
 
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Nom Materiel:</strong>
+                    <input type="text" class="form-control" value="{{ $fournisseur->nomMateriel }}" name="nomMateriel" placeholder="Nom Materiel ">
+                </div>
+            </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <button type="submit" class="btn warning">Submit</button>
+              <button type="submit" class="btn warning">Enregistrer</button>
             </div>
         </div>
 

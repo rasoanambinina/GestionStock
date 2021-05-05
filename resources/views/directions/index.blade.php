@@ -10,17 +10,7 @@
         </div>
     @endif
 
-            <div class="row">
-                <div class="col-lg-12 margin-tb">
-                    <div class="pull-left">
-                        <h2>Laravel 7 CRUD </h2>
-                        <a class="btn info" href="{{ route('directions.create') }}"> Ajouter un direction</a>
-                    </div>
-                    <div class="pull-right">
-
-                    </div>
-                </div>
-            </div>
+            <h2>Liste des directions </h2>
             <br>
     <table class="table table-striped">
         <tr>
@@ -38,7 +28,7 @@
             <td>
                 <form action="{{ route('directions.destroy',$direction->id) }}" method="POST">
 
-                    <a class="btn success" href="{{ route('directions.show',$direction->id) }}">Show</a>
+                    <a class="btn infos" href="{{ route('directions.show',$direction->id) }}">Show</a>
 
                     <a class="btn default" href="{{ route('directions.edit',$direction->id) }}">Edit</a>
 
@@ -54,5 +44,44 @@
             {{--/ Affichage paginate num +5 --}}
           {{ $directions->links() }}
     </div>
+
+        <button class="open-button" onclick="openForm()">Ajouter un fournisseur</button>
+
+        <div class="form-popup" id="myForm">
+            <form action="{{ route('directions.store') }}" method="POST" class="form-container">
+                @csrf
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Code Direction:</strong>
+                            <input type="text" name="codeDirection" class="form-control" placeholder="Code direction">
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Nom:</strong>
+                            <input type="text" class="form-control" name="nom" placeholder="Nom direction">
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <button type="submit" class="btn warning">Ajouter</button>
+                        <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <script>
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
+            }
+
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none";
+            }
+        </script>
 
 @endsection

@@ -9,18 +9,7 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Laravel 7 CRUD </h2>
-                <a class="btn btn-success" href="{{ route('personnels.create') }}"> Ajouter un Personnel</a>
-            </div>
-            <div class="pull-right">
-
-            </div>
-        </div>
-
-    </div>
+            <h2>Liste des personnels </h2>
             <br/>
     <table class="">
         <tr>
@@ -48,7 +37,7 @@
             <td>
                 <form action="{{ route('personnels.destroy',$personnel->id) }}" method="POST">
 
-                    <a class="btn success" href="{{ route('personnels.show',$personnel->id) }}">Show</a>
+                    <a class="btn infos" href="{{ route('personnels.show',$personnel->id) }}">Show</a>
 
                     <a class="btn default" href="{{ route('personnels.edit',$personnel->id) }}">Edit</a>
 
@@ -64,4 +53,75 @@
             {{--/ Affichage paginate num +5 --}}
           {{ $personnels->links() }}
     </div>
+
+
+             <button class="open-button" onclick="openForm()">Ajouter un personnel</button>
+
+             <div class="form-popup" id="myForm">
+                 <form action="{{ route('personnels.store') }}" method="POST" class="form-container">
+                     @csrf
+
+                     <div class="row">
+                         <div class="col-xs-12 col-sm-12 col-md-12">
+                             <div class="form-group">
+                                 <input type="text" name="referencePersonnel" class="form-control" placeholder="Reference Personnel">
+                             </div>
+                         </div>
+
+                         <div class="col-xs-12 col-sm-12 col-md-12">
+                             <div class="form-group">
+                                 <input type="text" class="form-control" name="nom" placeholder="Nom Personnel">
+                             </div>
+                         </div>
+
+                         <div class="col-xs-12 col-sm-12 col-md-12">
+                             <div class="form-group">
+                                 <input type="text" class="form-control" name="prenom" placeholder="Prenom Personnel">
+                             </div>
+                         </div>
+
+                         <div class="col-xs-12 col-sm-12 col-md-12">
+                             <div class="form-group">
+                                 <input type="text" class="form-control" name="numCIN" placeholder="Numéro CIN Personnel">
+                             </div>
+                         </div>
+
+                         <div class="col-xs-8 col-sm-8 col-md-8">
+                             <div class="form-group">
+                                 <input type="text" class="form-control" name="telephone" placeholder="Téléphone Personnel">
+                             </div>
+                         </div>
+
+                         <div class="col-xs-12 col-sm-12 col-md-12">
+                             <div class="form-group">
+                                 <input type="text" class="form-control" name="fonction" placeholder="Fonction Personnel">
+                             </div>
+                         </div>
+
+
+                         <div class="col-xs-12 col-sm-12 col-md-12">
+                             <div class="form-group">
+                                 <input type="text" class="form-control" name="adresse" placeholder="Adresse Personnel">
+                             </div>
+                         </div>
+
+                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                             <button type="submit" class="btn warning">Ajouter</button>
+                             <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
+                         </div>
+                     </div>
+
+                 </form>
+             </div>
+
+             <script>
+                 function openForm() {
+                     document.getElementById("myForm").style.display = "block";
+                 }
+
+                 function closeForm() {
+                     document.getElementById("myForm").style.display = "none";
+                 }
+             </script>
+
 @endsection
