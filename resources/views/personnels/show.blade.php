@@ -52,5 +52,6 @@
         </div>
 
     </div>
+     <a href="{{route('personnels')}}">Back</a>
     </div>
 @endsection

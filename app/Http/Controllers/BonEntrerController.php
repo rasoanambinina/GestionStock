@@ -61,7 +61,7 @@ class BonEntrerController extends Controller
          $request->validate([
              'numeroBE' => 'required',
              'materielsId' => 'required',
-             //'prixUnitaire' => 'required',
+             'fournisseursId' => 'required',
              'quantiteEntrer' => 'required',
          ]);
 
@@ -98,8 +98,19 @@ class BonEntrerController extends Controller
      */
     public function edit(entrees $bonEntrer)
     {
-        dd($bonEntrer);
-        return view('bonEntrers.edit',compact('bonEntrer'));
+        $materiel = Materiel::findOrFail($bonEntrer->materielsId);
+        $fournisseur = Fournisseur::findOrFail($bonEntrer->fournisseursId);
+
+        $listeMateriels = Materiel::get();
+
+        $listeFournisseur = Fournisseur::get();
+        // dd($bonSortie);
+
+        return view('bonEntrers.edit',compact('bonEntrer'))
+            ->with('mat',$materiel)
+            ->with('frs',$fournisseur)
+            ->with('listeMateriels',$listeMateriels)
+            ->with('listeFournisseur',$listeFournisseur);
     }
 
     /**
@@ -111,11 +122,11 @@ class BonEntrerController extends Controller
      */
     public function update(Request $request, entrees $bonEntrer)
     {
-        dd($bonEntrer);
+       // dd($bonEntrer);
         $request->validate([
             'numeroBE' => 'required',
             'materielsId' => 'required',
-            'prixUnitaire' => 'required',
+            'fournisseursId' => 'required',
             'quantiteEntrer' => 'required',
         ]);
 
@@ -133,7 +144,7 @@ class BonEntrerController extends Controller
      */
     public function destroy(Entrees $bonEntrer)
     {
-        dd($bonEntrer);
+        //dd($bonEntrer);
         $bonEntrer->delete();
 
         return redirect()->route('bonEntrers')

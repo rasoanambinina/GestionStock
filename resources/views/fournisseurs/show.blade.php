@@ -22,5 +22,6 @@
                     <input type="text" class="form-control" value="{{ $fournisseur->adresse }}" name="adresse" placeholder="Adresse Fournisseur" disabled>
                 </div>
             </div>
+             <a href="{{route('fournisseurs')}}">Back</a>
     </div>
 @endsection

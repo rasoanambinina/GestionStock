@@ -29,5 +29,6 @@
                 <input type="text" class="form-control" value="{{ $bonSortie->quantiteSortie }}" name="quantiteSortie" placeholder="Quantité Sortie" disabled>
             </div>
         </div>
+         <a href="{{route('bonSorties')}}">Back</a>
     </div>
 @endsection

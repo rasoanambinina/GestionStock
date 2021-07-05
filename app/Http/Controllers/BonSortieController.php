@@ -59,6 +59,15 @@ class BonSortieController extends Controller
             'quantiteSortie' => 'required',
         ]);
 
+        $materiel = Materiel::find($request->get('materielsId'));
+        $ancienStock = $materiel->stock;
+        $quantiteEntre = $request->get('quantiteSortie');
+        $nouveauStock = $ancienStock - $quantiteEntre;
+
+        //dd($nouveauStock);
+        $materiel->stock= $nouveauStock;
+        $materiel->save();
+
         sortie::create($request->all());
 
         return redirect()->route('bonSorties')
@@ -131,10 +140,13 @@ class BonSortieController extends Controller
             'quantiteSortie' => 'required',
         ]);
 
-        Sortie::whereId($id)->update();
+        $bonSortie=  Sortie::findOrFail($id);
 
-       // return redirect()->route('bonSorties')
-         //   ->with('success', 'Bon Sortie modifiée avec succès.');
+        $bonSortie->update($request->all());
+        //Sortie::whereId($id)->update();
+
+       return redirect()->route('bonSorties')
+           ->with('success', 'Bon Sortie modifiée avec succès.');
     }
 
     /**

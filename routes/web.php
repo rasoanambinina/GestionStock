@@ -55,6 +55,8 @@ Route::get('/bonSorties','BonSortieController@index')->name('bonSorties');
 
 Route::get('/demandes','DemandeController@index')->name('demandes');
 
+Route::get('/depositaireComptable','PersonnelController@depositaireComptable')->name('depositaireComptable');
+
 Route::get('/verifications','VerificationController@index')->name('verifications');
 
 Route::get('ajaxRequest', 'AjaxController@ajaxRequest');

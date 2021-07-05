@@ -14,6 +14,7 @@
                     <strong>Materiel:</strong>
                     <input type="text" class="form-control"  value="{{ $materiel->nom }}" name="materiel" placeholder="Materiel" disabled>
                 </div>
+                 <a href="{{route('demandes')}}">Back</a>
             </div>
 
 @endsection

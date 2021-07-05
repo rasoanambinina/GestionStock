@@ -89,13 +89,6 @@
 
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Prix Unitaire:</strong>
-                        <input type="number" class="form-control"  name="prixUnitaire" placeholder="Prix Unitaire">
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
                         <strong>Quantité Entrer:</strong>
                         <input type="number" class="form-control"  name="quantiteEntrer" placeholder="Quantité Entrer">
                     </div>

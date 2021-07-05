@@ -114,4 +114,17 @@ class PersonnelController extends Controller
         return redirect()->route('personnels')
             ->with('success', 'personnel supprimé avec succès.');
     }
+
+    /**
+     * get personne qui sont dépositaire comptable
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function depositaireComptable()
+    {
+        $personnels = Personnel::where('fonction', '=', 'Dépositaire comptable')->latest()->paginate(5);
+
+        return view('personnels.dpComptable',compact('personnels'))
+            ->with('i',(request()->input('page',1) - 1) * 5);
+    }
 }

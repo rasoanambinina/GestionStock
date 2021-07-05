@@ -1,7 +1,7 @@
 @extends('products.layout')
 @section('content')
     <div class="form-container">
-    <div class="row">
+        <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Reference:</strong>
@@ -16,6 +16,7 @@
             </div>
         </div>
 
-    </div>
+        </div>
+         <a href="{{route('materiels')}}">Back</a>
     </div>
 @endsection
